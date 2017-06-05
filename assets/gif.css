@@ -1,0 +1,17 @@
+body {
+	background-image: url("http://i.imgur.com/TNmFrsH.png");
+}
+
+.jumbotron {
+	text-align: center;
+	font-family: 'Homemade Apple', cursive;
+	background-color: #78D4F6;
+}
+
+#form {
+	text-align: center;
+}
+
+#foodDrink-search {
+	margin-top: 10px;
+}
