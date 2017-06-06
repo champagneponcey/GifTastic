@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var gifs = ["Banana", "Bacon", "Champagne"];
 
 	function renderButtons() {
-		// $("#search-buttons").empty();
+		$("#search-buttons").empty();
 
 		for (var i=0; i<gifs.length; i++) {
 			var newButton = $("<button>");
