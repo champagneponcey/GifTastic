@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var gifs = ["Banana", "Bacon", "Champagne"];
 
 	function renderButtons() {
-		$("#search-buttons").empty();
+		// $("#search-buttons").empty();
 
 		for (var i=0; i<gifs.length; i++) {
 			var newButton = $("<button>");
@@ -26,12 +26,33 @@ $(document).ready(function(){
 	});
 
 	renderButtons();
-	
-	// var giphyURL = "https://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
-	// $.ajax({
-	// 	url: giphyURL,
-	// 	method: 'GET'
-	// }).done(function(response) {
 
-	// })
+	$("button").on("click", function() {
+
+		var gifTerm = $(this).attr("data-name");
+
+		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + gifTerm + "&api_key=dc6zaTOxFJmzC"
+		$.ajax({
+			url: giphyURL,
+			method: 'GET'
+		}).done(function(response) {
+			console.log(giphyURL);
+			console.log(response);
+
+			var results = response.data;
+
+			for (var i=0; i<results.length; i++) {
+				var gifDiv = $("<div>");
+
+				var gifImage = $("<img>");
+
+				gifImage.attr("src", results[i].images.fixed_height.url);
+
+				gifDiv.append(gifImage);
+
+				$("#gifs-here").prepend(gifDiv);
+			}
+
+		});
+	});
 });
