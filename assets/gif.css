@@ -8,16 +8,32 @@ body {
 	background-color: #78D4F6;
 }
 
-#form {
-	text-align: center;
-}
-
 label,  #foodDrink-search {
 	margin-top: 10px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 20px;
 }
 
-#search-button {
-	margin-right: 20px;
+#foodDrink-search {
+	border-radius: 7px;
+}
+
+.foodDrinks {
+	margin-left: 20px;
+	border-radius: 7px;
+}
+
+#form {
+	text-align: center;
+}
+
+#gifs-here {
+	display: inline-block;
+}
+
+#gifs-here > div
+{
+	display: inline-block;
+	margin-right: 4px;
+	margin-bottom: 4px;
 }

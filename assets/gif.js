@@ -18,17 +18,22 @@ $(document).ready(function(){
 	$("#foodDrink-search").on("click", function(event) {
 		event.preventDefault();
 
+		console.log( "clicked" );
+
 		var foodDrink = $("#search-term").val().trim();
 
 		gifs.push(foodDrink);
+
+		$("#search-term").val("");
 
 		renderButtons();
 	});
 
 	renderButtons();
 
-	$("button").on("click", function() {
+	$("#search-buttons").on("click", ".foodDrinks", function() {
 
+		console.log( 'do i work?' );
 		var gifTerm = $(this).attr("data-name");
 
 		var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + gifTerm + "&api_key=dc6zaTOxFJmzC"
